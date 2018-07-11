@@ -5,16 +5,12 @@
     .controller('signHereController', SignHereController);
 
     SignHereController.$inject = ['$element', 'signatureDefaults'];
-    
+
     /**
     * @name signHereController
     * @description AngularJS wrapper component for https://github.com/szimek/signature_pad/.
     */
     function SignHereController ($element, signatureDefaults) {
-
-        // Component defaults.
-        const defaultBackColor = 'rgba(0, 0, 0, 0)'; // Transparent.
-        const defaultPenColor = 'rgb(27, 53, 88)'; // Blue.
 
         let ctrl = {};
 
@@ -24,6 +20,7 @@
 
             ctrl.backgroundColor = this.backgroundColor || signatureDefaults.backgroundColor;
             ctrl.penColor = this.penColor || signatureDefaults.penColor;
+            ctrl.imageFormat = this.imageFormat || undefined;
 
             ctrl.onSignatureUpdate = this.onSignatureUpdate;
 
@@ -69,15 +66,32 @@
 
         /**
         * @name onEnd
-        * @description Function for signature pad onEnd callback.
+        * @description Function for signature pad onEnd.
         */
         ctrl.onEnd = function () {
 
-            if (ctrl.onSignatureUpdate) {
+            if (!ctrl.onSignatureUpdate) {
 
-                let signatureData = ctrl.signaturePad.toDataURL();
-                ctrl.onSignatureUpdate(signatureData);
+                return;
             }
+
+            let signatureData;
+            if (!ctrl.imageFormat || ctrl.imageFormat == 'png') {
+
+                signatureData = ctrl.signaturePad.toDataURL();
+            } else if (ctrl.imageFormat == 'jpg' || ctrl.imageFormat == 'jpeg') {
+
+                signatureData = ctrl.signaturePad.toDataURL('image/jpeg');
+            } else if (ctrl.imageFormat == 'svg') {
+
+                signatureData = ctrl.signaturePad.toDataURL('image/svg+xml');
+            } else {
+
+                // Use default because imageFormat is probably invalid.
+                signatureData = ctrl.signaturePad.toDataURL();
+            }
+
+            ctrl.onSignatureUpdate(signatureData);
         };
 
         /**
