@@ -23,7 +23,7 @@
   "homepage": "https://github.com/jerme404/ng-sign-here#readme",
   "devDependencies": {
     "ajv": "^6.4.0",
-    "angular-mocks": "^1.6.7",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-add-src": "^0.2.0",
     "gulp-bump": "^3.1.1",
