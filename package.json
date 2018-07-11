@@ -1,0 +1,39 @@
+{
+  "name": "ng-sign-here",
+  "version": "1.0.0",
+  "description": "AngularJS signature pad component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerme404/ng-sign-here.git"
+  },
+  "keywords": [
+    "angularjs",
+    "signature",
+    "pad"
+  ],
+  "author": "jerme404",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jerme404/ng-sign-here/issues"
+  },
+  "homepage": "https://github.com/jerme404/ng-sign-here#readme",
+  "devDependencies": {
+    "ajv": "^6.4.0",
+    "angular-mocks": "^1.6.7",
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-bump": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-javascript-obfuscator": "^1.1.4",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-template": "^5.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^0.1.11",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {}
+}
