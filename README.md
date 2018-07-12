@@ -52,3 +52,50 @@ Supported formats are png, jpg/jpeg, and svg.
 <sign-here image-format="svg">
 </sign-here>
 ```
+### Getting the Signature
+Pass a function to on-signature-update.
+```js
+// Controller signature update function.
+ctrl.onSignatureUpdate = function (signatureData) {
+
+    // Set a signatureData property on your controller.
+    ctrl.signature = signatureData;
+};
+```
+```html
+<sign-here on-signature-update="demo.onSignatureUpdate">
+</sign-here>
+```
+### Clearing the Signature
+This component does NOT use two-way binding, so you need to register a handler with register-clear-handler. On clear, the component will call onSignatureUpdate with ```js signatureData=undefined```
+```js
+// Your controller's clear handler.
+let clearSignatureHandler = null;
+
+// Register clear handler function.
+ctrl.registerClearHandler = function (handler) {
+
+    // Set the handler returned from the component.
+    clearSignatureHandler = handler;
+};
+
+// Handle the clear button click.
+ctrl.clearSignature = function () {
+
+    // Check if a the clearSignatureHandler is registered.
+    if (clearSignatureHandler) {
+
+        clearSignatureHandler();
+    }
+};
+```
+```html
+<!-- Register your controller's clear handler -->
+<sign-here demo.registerClearHandler(handler)>
+</sign-here>
+
+<!-- A clear button somewhere on your page -->
+<button ng-click="demo.clearSignature()">
+    CLEAR
+</button>
+```
