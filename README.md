@@ -2,7 +2,7 @@
 AngularJS wrapper component for [signature_pad](https://github.com/szimek/signature_pad/).
 
 ### Demo
-The [demo](https://jerme404.github.io/ng-sign-here/) uses ```on-signature-update``` to set the background image of a div at the end of each signature stroke. 
+The [demo](https://jerme404.github.io/ng-sign-here/) uses ```on-signature-update``` to set the background image of a div after each signature stroke. 
 
 ## Install
 ```bash
