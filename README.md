@@ -2,7 +2,9 @@
 AngularJS signature capture component.  Wrapper for [signature_pad](https://github.com/szimek/signature_pad/).
 
 ## Install
-Download ngSignHere.min.js and include in your project.
+```bash
+npm install ng-sign-here
+```
 
 ## Getting Started
 Include ngSignHere.min.js and [signature_pad](https://github.com/szimek/signature_pad/).
