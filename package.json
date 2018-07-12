@@ -9,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/jerme404/ng-sign-here.git"
   },
+  "main": "dist/ngSignHere.min.js",
   "keywords": [
     "angularjs",
     "signature_pad",
