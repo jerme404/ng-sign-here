@@ -1,7 +1,8 @@
 # ng-sign-here
 AngularJS wrapper component for [signature_pad](https://github.com/szimek/signature_pad/).
 
-[Demo](https://jerme404.github.io/ng-sign-here/)
+### Demo
+The [demo](https://jerme404.github.io/ng-sign-here/) uses ```on-signature-update``` to set the background image of a div at the end of each signature stroke. 
 
 ## Install
 ```bash
@@ -106,6 +107,15 @@ ctrl.clearSignature = function () {
     CLEAR
 </button>
 ```
+### Non Implemented
+The following [signature_pad options/features](https://github.com/szimek/signature_pad/#api) have been omitted because I didn't need them.  I may or may not add these in the future, but you're certainly welcome to submit a pull request if you want to add them.
+* dotSize
+* minWidth
+* maxWidth
+* throttle
+* minDistance
+* velocityFilterWeight
+* onBegin
 ## Build from Source
 Clone the repository.
 ```bash
