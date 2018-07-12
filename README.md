@@ -67,7 +67,7 @@ ctrl.onSignatureUpdate = function (signatureData) {
 </sign-here>
 ```
 ### Clearing the Signature
-This component does NOT use two-way binding, so you need to register a handler with register-clear-handler. On clear, the component will call onSignatureUpdate with ```js signatureData=undefined```
+This component does NOT use two-way binding, so you need to register a handler with register-clear-handler. On clear, the component will call onSignatureUpdate with ``` signatureData=undefined```
 ```js
 // Your controller's clear handler.
 let clearSignatureHandler = null;
