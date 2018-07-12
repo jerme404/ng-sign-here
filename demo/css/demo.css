@@ -54,10 +54,10 @@ body {
 .clear {
     color: #DB402C;
     width: 33%;
-    text-align: left;
+    text-align: right;
 }
 .accept {
     color: #009F53;
     width: 33%;
-    text-align: right;
+    text-align: left;
 }
