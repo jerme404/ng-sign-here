@@ -25,14 +25,18 @@ gulp.task('clean', function(cb) {
 
 // Combine JS files.
 gulp.task('combine', function () {
-  return gulp.src(dir.src + '/**/*.module.js')
-    .pipe(addsrc.append([dir.src + '/**/*.js', '!' + dir.src + '/**/*.module.js']))
-    .pipe(concat('ngSignHere.min.js', {newLine: ';'}))
+    return gulp.src([
+        dir.src + '/**/*.module.js',
+        dir.src + '/**/*.config.js',
+        dir.src + '/**/*.controller.js',
+        dir.src + '/**/*.component.js',
+    ])
     .pipe(ngAnnotate())
     .pipe(uglify().on('error', function(e) {
       console.log(e);
       throw new Error('Can\'t uglify properly');
     }))
+    .pipe(concat('ngSignHere.min.js', {newLine: ';'}))
     .pipe(gulp.dest(dir.dist));
 });
 

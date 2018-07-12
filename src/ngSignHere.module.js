@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('ngSignHere');
+    angular.module('ngSignHere', []);
 })();
