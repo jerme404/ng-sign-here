@@ -8,8 +8,8 @@ The [demo](https://jerme404.github.io/ng-sign-here/) uses ```on-signature-update
 ```bash
 npm install ng-sign-here
 ```
-### Dependencies
-The only dependency, other than AngularJS, is signature_pad. You can either link it, or install as a package with 
+#### Dependencies
+The only dependency, other than AngularJS, is [signature_pad](https://github.com/szimek/signature_pad/). You can either link it, or install the latest release package with 
 ```bash
 npm install signature_pad
 ```
